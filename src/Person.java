@@ -1,9 +1,40 @@
+import java.util.Scanner;
+
 public class Person {
    private String firstName;
    private String lastName;
    private int age;
    private int pesel;
 
+    public Person(String firstName, String lastName, int age, int pesel) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.pesel = pesel;
+
+
+        if (firstName.length() <= 2) {
+            throw new NameUndefinedException();
+        } else if (firstName == null) {
+            throw new NameUndefinedException();
+        } else {
+            System.out.println("Imie jest dobre");
+        }
+
+        if (lastName.length() <= 2) {
+            throw new NameUndefinedException();
+        } else if (lastName == null) {
+            throw new NameUndefinedException();
+        } else {
+            System.out.println("Nazwisko jest dobre");
+        }
+
+        if (age < 1) {
+            throw new IncorrectAgeException();
+        } else {
+            System.out.println("Wiek jest dobry");
+        }
+    }
 
     public Person() {
 
