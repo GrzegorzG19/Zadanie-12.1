@@ -8,11 +8,6 @@ public class Person {
 
     public Person(String firstName, String lastName, int age, int pesel) {
         this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.pesel = pesel;
-
-
         if (firstName.length() <= 2) {
             throw new NameUndefinedException();
         } else if (firstName == null) {
@@ -20,7 +15,7 @@ public class Person {
         } else {
             System.out.println("Imie jest dobre");
         }
-
+        this.lastName = lastName;
         if (lastName.length() <= 2) {
             throw new NameUndefinedException();
         } else if (lastName == null) {
@@ -28,17 +23,15 @@ public class Person {
         } else {
             System.out.println("Nazwisko jest dobre");
         }
-
+        this.age = age;
         if (age < 1) {
             throw new IncorrectAgeException();
         } else {
             System.out.println("Wiek jest dobry");
         }
+        this.pesel = pesel;
     }
 
-    public Person() {
-
-    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
